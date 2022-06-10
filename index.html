@@ -5,14 +5,23 @@
 	<script>
 		// TODO: create a handler
 		function setSearchEngine(){
-			console.log("hello there");
+			let radioX= document.querySelector("input[name=engine]:checked").value;
 			event.preventDefault();
+			let actions = {
+   "Google": "https://www.google.com/",
+   "Duckduckgo": "https://duckduckgo.com/",
+   "Bing": "https://www.bing.com/search",
+   "Ask": "https://www.ask.com/web"
+};
+
+let form = document.getElementById("searchForm").action = actions[radioX];
 
 		}
 
 
     window.addEventListener("load", function(){
-	let searchField = document.getElementById("searchForm");
+	let searchField = document.getElementById("searchForm").action = actions[radioX];
+	setSearchEngine();
 
         // TODO: register the handler
     });
